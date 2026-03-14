@@ -1,3 +1,162 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  height: 50vh;
+
+  background: url("assets/style-1/header-bg.jpg") no-repeat center center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.header-content {
+  margin: 0 8vh 0 8vh;
+  padding: 6vh;
+  border: #ffdbe5 2px solid;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  box-shadow: #ffdbe5 0 0 16px;
+
+  color: #ffdbe5;
+}
+
+.title {
+  font-family: "Book Antiqua", "Arial", sans-serif;
+}
+
+.subtitle {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  color: #ffdbe5;
+}
+
 body {
   background-color: #dfecff;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  color: black;
+}
+
+p {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  color: black;
+}
+
+.section-A {
+  margin: 0;
+  padding: 0 6vh;
+  background: #ffdbe5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-A h2 {
+  font-family: "Book Antiqua", "Arial", sans-serif;
+  color: #337357;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4vh;
+  background: #337357;
+  padding: 4vh 0;
+}
+
+.image-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32vh;
+  border: #ffdbe5 0px solid;
+  border-radius: 12px;
+  padding: 2vh;
+  background: linear-gradient(#ffdbe5, #e27369);
+  box-shadow: black 0 0 8px;
+}
+
+.image-tile img {
+  width: 30vh;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.image-tile p {
+  color: #337357;
+  font-weight: bold;
+}
+
+.section-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #337357;
+  text-align: center;
+  padding: 2vh 0;
+}
+
+.section-list h2 {
+  font-family: "Book Antiqua", "Arial", sans-serif;
+  color: #ffdbe5;
+  margin: 0 8vh;
+}
+
+.section-list ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.section-list li {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  font-weight: bold;
+  list-style: none;
+  margin: 1vh 2vh;
+  padding: 1vh 2vh;
+  width: 10vh;
+  background: #ffdbe5;
+  color: #337357;
+  border-radius: 12px;
+  box-shadow: black 0 0 8px;
+}
+
+footer {
+  background: #e27369;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  padding: 0 6vh;
+}
+
+footer p {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  header {
+    height: auto;
+    padding: 4vh 0;
+  }
+
+  .header-content {
+    margin: 0 4vh;
+    padding: 4vh;
+  }
 }
