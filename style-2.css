@@ -141,11 +141,11 @@ p {
   flex-direction: column;
   gap: 9px;
   padding: 0;
-  text-align: center;
+  text-align: left;
 }
 
 .section-list li {
-  list-style: none;
+  list-style: circle;
   font-family: "Segoe UI", "Arial", sans-serif;
   font-weight: bold;
   color: #e3e4fa;
