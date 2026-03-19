@@ -149,6 +149,26 @@ footer p {
   text-align: center;
 }
 
+
+.social-media {
+  background: linear-gradient(#ffdbe5, #e27369);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.social-media h3 {
+  font-family: "Book Antiqua", "Arial", sans-serif;
+  color: #337357;
+}
+
+.social-media p {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  color: #ffdbe5;
+}
+
 @media (max-width: 500px) {
   header {
     height: auto;

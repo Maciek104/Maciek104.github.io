@@ -70,6 +70,7 @@ p {
 }
 
 .section-A {
+  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -165,6 +166,35 @@ footer p {
   font-family: "Segoe UI", "Arial", sans-serif;
   margin: 18px;
 }
+
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 18px;
+  padding: 18px;
+
+  background: linear-gradient(#8897bd, #293961);
+
+  color: #e3e4fa;
+
+  box-shadow: black 0 0 12px;
+
+  text-align: center;
+  justify-content: center;
+}
+
+.social-media h3 {
+  font-family: "Bahnschrift", "Arial", sans-serif;
+  color: #e3e4fa;
+}
+
+.social-media p {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  color: #e3e4fa;
+}
+
 
 @media (max-width: 500px) {
   .margin {
