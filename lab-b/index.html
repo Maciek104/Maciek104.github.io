@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maciej Stępień (57791) - PTW LAB B</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Lista zadań (ToDo)</h1>
+</header>
+
+<div>
+    <input type="text" id="search" placeholder="Szukaj...">
+</div>
+
+<div id="todo-list"></div>
+
+<div id="add-task-section" style="margin-top: 20px;">
+    <input type="text" id="new-task" placeholder="Nowe zadanie">
+    <input type="date" id="new-date">
+    <button id="add-task">Dodaj</button>
+</div>
+
+<footer>
+    <p>&copy Maciej Stępień</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+    document.querySelector("#add-task").addEventListener("click", () => {
+        const titleInput = document.querySelector("#new-task");
+        const dateInput = document.querySelector("#new-date");
+        const title = titleInput.value.trim();
+        const date = dateInput.value;
+
+        if (title.length < 3 || title.length > 255) {
+            alert("Zadanie musi mieć 3-255 znaków!");
+            return;
+        }
+        if (date && new Date(date) < new Date()) {
+            alert("Data musi być dzisiaj lub w przyszłości!");
+            return;
+        }
+
+        document.todo.add({ title, date });
+        titleInput.value = "";
+        dateInput.value = "";
+    });
+
+    document.querySelector("#search").addEventListener("input", (e) => {
+        document.todo.term = e.target.value;
+        document.todo.draw();
+    });
+</script>
+
+
