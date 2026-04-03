@@ -1,0 +1,216 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  height: 75vh;
+
+  background: url("assets/style-2/header-bg.jpg") no-repeat center center;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 100%;
+  height: 75vh;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  color: #e3e4fa;
+  font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.title {
+  font-family: "Bahnschrift", "Arial", sans-serif;
+
+  border: #e3e4fa 2px solid;
+  border-radius: 18px;
+  padding: 18px;
+
+  margin: 18px;
+}
+
+.subtitle {
+  margin: 18px;
+}
+
+h2 {
+  font-family: "Bahnschrift", "Arial", sans-serif;
+}
+
+p {
+  font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.margin {
+  margin: 48px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.space {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 18px;
+
+  flex-wrap: wrap;
+}
+
+.section-A {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 18px;
+  padding: 18px;
+
+  background: #8897bd;
+
+  color: #e3e4fa;
+
+  box-shadow: black 0 0 12px;
+}
+
+.section-A h2 {
+  font-family: "Bahnschrift", "Arial", sans-serif;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.image-tile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  margin: 0 18px;
+  border-radius: 18px;
+  background: #e3e4fa;
+  box-shadow: black 0 0 12px;
+}
+
+.image-tile img {
+  height: 16vh;
+  border-radius: 18px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.image-tile p {
+  font-family: "Bahnschrift", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  color: #293961;
+}
+
+.section-list {
+  border: #e3e4fa 2px solid;
+  border-radius: 18px;
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-list h2 {
+  font-family: "Bahnschrift", "Arial", sans-serif;
+  color: #e3e4fa;
+}
+
+.section-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 0;
+  text-align: left;
+}
+
+.section-list li {
+  list-style: circle;
+  font-family: "Segoe UI", "Arial", sans-serif;
+  font-weight: bold;
+  color: #e3e4fa;
+}
+
+footer {
+  background: #262842;
+  color: #e3e4fa;
+  text-align: center;
+  height: 12vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  margin: 18px;
+}
+
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 18px;
+  padding: 18px;
+
+  background: linear-gradient(#8897bd, #293961);
+
+  color: #e3e4fa;
+
+  box-shadow: black 0 0 12px;
+
+  text-align: center;
+  justify-content: center;
+}
+
+.social-media h3 {
+  font-family: "Bahnschrift", "Arial", sans-serif;
+  color: #e3e4fa;
+}
+
+.social-media p {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  color: #e3e4fa;
+}
+
+
+@media (max-width: 500px) {
+  .margin {
+    margin: 18px;
+  }
+
+  .image-tile p {
+    font-size: 18px;
+  }
+
+  .image-tile img {
+    height: 12vh;
+  }
+}
+
+body {
+  background-color: #293961;
+  margin: 0;
+}
