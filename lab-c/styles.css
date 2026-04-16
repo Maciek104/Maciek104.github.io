@@ -1,0 +1,130 @@
+body {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  font-size: 1.2em;
+}
+
+section {
+  background-color: white;
+  padding: 8px;
+  text-align: center;
+  border-radius: 24px;
+  margin: 8px;
+  width: 460px;
+  height: 500px;
+}
+
+#map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#map {
+  width: 400px;
+  height: 400px;
+  align-content: center;
+  align-items: center;
+}
+
+.puzzle-space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#puzzle-container, #puzzle-board-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#puzzle {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  gap: 2px;
+  width: 400px;
+  height: 400px;
+}
+
+#puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  gap: 2px;
+  border: 0px solid #ccc;
+  width: 400px;
+  height: 400px;
+}
+
+.puzzle-piece {
+  width: 100px;
+  height: 100px;
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #999;
+  cursor: grab;
+
+  background-size: cover;
+}
+
+.puzzle-slot {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.puzzle-piece.dragging {
+  opacity: 0.5;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  width: 16vh;
+  font-family: "Segoe UI", "Arial", sans-serif;
+  font-weight: bold;
+  color: black;
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  gap: 6px;
+}
+

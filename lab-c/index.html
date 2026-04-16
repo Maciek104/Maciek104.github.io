@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maciej Stępień (57791) - PTW LAB C</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+<header>
+    <h1>Zaawansowane JS w przeglądarce - Puzzle</h1>
+</header>
+
+<div class="row">
+    <section id="map-container">
+        <h2>Mapa</h2>
+        <div id="map" style="height: 400px;"></div>
+        <div class="row">
+            <button id="geolocation-btn">Moja lokalizacja</button>
+            <button id="download-map-btn">Pobierz mapę</button>
+        </div>
+    </section>
+
+    <section id="static-map-container">
+        <h2>Mapa Statyczna</h2>
+        <img id="static-map" src="" alt="Mapa statyczna" style="max-width: 400px; height: auto;">
+    </section>
+</div>
+
+<div class="row">
+    <section id="puzzle-container">
+        <h2>Puzzle</h2>
+        <div id="puzzle"></div>
+    </section>
+
+    <section id="puzzle-board-container">
+        <h2>Plansza do układania puzzli</h2>
+        <div id="puzzle-board"></div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy Maciej Stępień</p>
+</footer>
+
+<script>
+    if ("Notification" in window) {
+        Notification.requestPermission();
+    }
+</script>
+
+</body>
+</html>
