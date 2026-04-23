@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: url("assets/images/background.jpeg");
   background-size: cover;
@@ -13,9 +18,9 @@ body {
 
 header {
   font-family: "Segoe UI Black", "Arial", sans-serif;
-  width: 64%;
+  width: 72%;
   padding: 12px;
-  margin: 12px;
+  margin-top: 12px;
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -33,12 +38,18 @@ header {
 
 h1 {
   font-family: "Segoe UI Black", "Arial", sans-serif;
-  font-size: 2em;
+  font-size: 1.6em;
 }
 
 h2 {
   font-family: "Segoe UI Black", "Arial", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-family: "Segoe UI Black", "Arial", sans-serif;
+  font-size: 1em;
 }
 
 p {
@@ -48,8 +59,9 @@ p {
 
 .searching-section {
   font-family: "Segoe UI", "Arial", sans-serif;
-  width: 64%;
+  width: 72%;
   padding: 12px;
+  margin-top: 12px;
 
   display: flex;
   flex-direction: row;
@@ -62,16 +74,17 @@ p {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
-  border-radius: 32px;
+  border-radius: 34px;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #input {
   width: 75%;
+  height: 20px;
   background: rgba(255, 255, 255, 0.15);
   border: 0;
-  border-radius: 4px;
-  padding: 6px;
+  border-radius: 50px;
+  padding: 8px;
   color: white;
 }
 
@@ -89,9 +102,10 @@ input::placeholder {
 
 #search {
   width: 25%;
+  height: 36px;
   background: rgba(255, 255, 255, 0.18);
   border: 0;
-  border-radius: 8px;
+  border-radius: 50px;
   padding: 8px;
   color: white;
   font-weight: 500;
@@ -124,8 +138,10 @@ input::placeholder {
 
 footer {
   font-family: "Segoe UI", "Arial", sans-serif;
-  width: 64%;
+  width: 72%;
   padding: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -137,13 +153,14 @@ footer {
 
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 0;
 
   color: white;
 }
 
 .weather-box {
-  width: 64%;
-  margin: 12px;
+  width: 72%;
+  margin-top: 12px;
   padding: 12px;
 
   background: rgba(255, 255, 255, 0.15);
@@ -155,15 +172,183 @@ footer {
 
 #weather-current {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0;
   
 }
 
-.forecast-item {
-  padding: 12px;
-  margin: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+.column-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
 
+  justify-content: left;
+  justify-items: left;
+  align-items: left;
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  width: 100%;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.forecast-day {
+  grid-column: 1 / -1;
+
+  margin-top: 24px;
+  padding: 6px 10px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  font-size: 0.95em;
+  text-align: center;
+}
+
+.forecast-card {
+  padding: 10px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.25);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.forecast-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transform: translateY(-3px);
+}
+
+.forecast-card img {
+  width: 45px;
+  margin: 4px 0;
+}
+
+.forecast-time {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.forecast-temp {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.forecast-desc {
+  font-size: 0.8em;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  header,
+  .searching-section,
+  .weather-box,
+  footer {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 0.95em;
+  }
+
+  .searching-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #input,
+  #search {
+    width: 100%;
+    height: 44px;
+
+    border-radius: 50px;
+
+    font-family: "Segoe UI", "Arial", sans-serif;
+    font-size: 1em;
+
+    box-sizing: border-box;
+  }
+
+  #input {
+    padding: 0 14px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  #search {
+    padding: 0 14px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #weather-current {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+}

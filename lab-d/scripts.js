@@ -5,8 +5,9 @@ const API_KEY = "9c3adf3244581fac3747e5272fe6c7b5";
 
 searchBtn.addEventListener("click", () => {
   const city = input.value.trim();
+
   if (city === "") {
-    alert("Podaj nazwę miasta!");
+    alert("Podaj nazwę miejscowości!");
     return;
   }
 
@@ -17,33 +18,15 @@ searchBtn.addEventListener("click", () => {
 function getCurrentWeather(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pl`;
 
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", url);
-
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      const data = JSON.parse(xhr.responseText);
-      console.log("Current weather:", data);
-
-      displayCurrentWeather(data);
-    } else {
-      alert("Nie znaleziono miasta!");
-    }
-  };
-
-  xhr.send();
-}
-
-function getForecast(city) {
-  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=pl`;
-
   fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      console.log("Forecast:", data);
-      displayForecast(data);
+    .then(res => {
+      if (!res.ok) throw new Error();
+      return res.json();
     })
-    .catch(() => alert("Błąd pobierania prognozy"));
+    .then(data => {
+      displayCurrentWeather(data);
+    })
+    .catch(() => alert("Nie znaleziono miejscowości!"));
 }
 
 function displayCurrentWeather(data) {
@@ -56,13 +39,37 @@ function displayCurrentWeather(data) {
     document.body.insertBefore(container, document.querySelector("footer"));
   }
 
+  const icon = data.weather[0].icon;
+  const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
   container.innerHTML = `
-        <h2>Aktualna pogoda: ${data.name}</h2>
-        <p>Temperatura: ${data.main.temp}°C</p>
-        <p>Odczuwalna: ${data.main.feels_like}°C</p>
-        <p>Wilgotność: ${data.main.humidity}%</p>
-        <p>Opis: ${data.weather[0].description}</p>
-    `;
+    <div class="column-title">
+      <h2>Aktualna pogoda: ${data.name}</h2>
+      <div class="row">
+        <img src="${iconUrl}" alt="ikona pogody">
+        <div class="column">
+          <p>Temperatura: <strong>${data.main.temp}°C</strong></p>
+          <p>Odczuwalna: <strong>${data.main.feels_like}°C</strong></p>
+          <p>Wilgotność: <strong>${data.main.humidity}%</strong></p>
+          <p>Opis: <strong>${data.weather[0].description}</strong></p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function getForecast(city) {
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=pl`;
+
+  fetch(url)
+    .then(res => {
+      if (!res.ok) throw new Error();
+      return res.json();
+    })
+    .then(data => {
+      displayForecast(data);
+    })
+    .catch(() => alert("Błąd pobierania prognozy"));
 }
 
 function displayForecast(data) {
@@ -75,17 +82,41 @@ function displayForecast(data) {
     document.body.insertBefore(container, document.querySelector("footer"));
   }
 
-  let html = `<h2>Prognoza 5‑dniowa</h2>`;
+  let html = `
+    <div class="column-title">
+      <h2>Prognoza 5-dniowa</h2>
+    </div>
+    <div class="forecast-grid">
+  `;
+
+  let currentDate = "";
 
   data.list.forEach(item => {
+    const [date, time] = item.dt_txt.split(" ");
+
+    if (date !== currentDate) {
+      currentDate = date;
+      html += `
+        <div class="forecast-day">
+          <h3>${date}</h3>
+        </div>
+      `;
+    }
+
+    const icon = item.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
     html += `
-            <div class="forecast-item">
-                <p><strong>${item.dt_txt}</strong></p>
-                <p>Temp: ${item.main.temp}°C</p>
-                <p>${item.weather[0].description}</p>
-            </div>
-        `;
+      <div class="forecast-card">
+        <p class="forecast-time">${time.slice(0,5)}</p>
+        <img src="${iconUrl}" alt="ikona">
+        <p class="forecast-temp">${item.main.temp}°C</p>
+        <p class="forecast-desc">${item.weather[0].description}</p>
+      </div>
+    `;
   });
+
+  html += `</div>`;
 
   container.innerHTML = html;
 }
