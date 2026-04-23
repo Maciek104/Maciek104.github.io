@@ -1,3 +1,169 @@
 body {
-  background-color: #e6f1fc;
+  background: url("assets/images/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+
+header {
+  font-family: "Segoe UI Black", "Arial", sans-serif;
+  width: 64%;
+  padding: 12px;
+  margin: 12px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: white;
+}
+
+h1 {
+  font-family: "Segoe UI Black", "Arial", sans-serif;
+  font-size: 2em;
+}
+
+h2 {
+  font-family: "Segoe UI Black", "Arial", sans-serif;
+  font-size: 1.5em;
+}
+
+p {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  font-size: 1em;
+}
+
+.searching-section {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  width: 64%;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#input {
+  width: 75%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 0;
+  border-radius: 4px;
+  padding: 6px;
+  color: white;
+}
+
+input::placeholder {
+  color: lightgray;
+
+}
+
+#input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+  transition: 0.25s ease;
+}
+
+#search {
+  width: 25%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 0;
+  border-radius: 8px;
+  padding: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition:
+    background 0.25s ease,
+    transform 0.15s ease,
+    box-shadow 0.25s ease;
+}
+
+#search:hover {
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
+}
+
+#search:active {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(0px) scale(0.97);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.spacer {
+  flex: 1;
+}
+
+footer {
+  font-family: "Segoe UI", "Arial", sans-serif;
+  width: 64%;
+  padding: 12px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: white;
+}
+
+.weather-box {
+  width: 64%;
+  margin: 12px;
+  padding: 12px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+#weather-current {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  
+}
+
+.forecast-item {
+  padding: 12px;
+  margin: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+
