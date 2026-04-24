@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: url(assets/fonts/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Merriweather Sans";
+  src: url(assets/fonts/MerriweatherSans-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -37,28 +47,28 @@ header {
 }
 
 h1 {
-  font-family: "Segoe UI Black", "Arial", sans-serif;
+  font-family: "Playfair Display", "Arial", sans-serif;
   font-size: 1.6em;
 }
 
 h2 {
-  font-family: "Segoe UI Black", "Arial", sans-serif;
+  font-family: "Playfair Display", "Arial", sans-serif;
   font-size: 1.3em;
   margin-bottom: 12px;
 }
 
 h3 {
-  font-family: "Segoe UI Black", "Arial", sans-serif;
+  font-family: "Merriweather Sans", "Arial", sans-serif;
   font-size: 1em;
 }
 
 p {
-  font-family: "Segoe UI", "Arial", sans-serif;
+  font-family: "Merriweather Sans", "Arial", sans-serif;
   font-size: 1em;
 }
 
 .searching-section {
-  font-family: "Segoe UI", "Arial", sans-serif;
+  font-family: "Merriweather Sans", "Arial", sans-serif;
   width: 72%;
   padding: 12px;
   margin-top: 12px;
@@ -86,6 +96,7 @@ p {
   border-radius: 50px;
   padding: 8px;
   color: white;
+  font-family: "Merriweather Sans", "Arial", sans-serif;
 }
 
 input::placeholder {
@@ -110,6 +121,8 @@ input::placeholder {
   color: white;
   font-weight: 500;
   cursor: pointer;
+  font-family: "Merriweather Sans", "Arial", sans-serif;
+  font-weight: bold;
 
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -137,7 +150,8 @@ input::placeholder {
 }
 
 footer {
-  font-family: "Segoe UI", "Arial", sans-serif;
+  font-family: "Merriweather Sans", "Arial", sans-serif;
+  font-weight: bold;
   width: 72%;
   padding: 12px;
   margin-top: 12px;
@@ -309,7 +323,7 @@ footer {
 
     border-radius: 50px;
 
-    font-family: "Segoe UI", "Arial", sans-serif;
+    font-family: "Merriweather Sans", "Arial", sans-serif;
     font-size: 1em;
 
     box-sizing: border-box;
