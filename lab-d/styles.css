@@ -231,6 +231,7 @@ footer {
 
 .forecast-card {
   padding: 10px;
+  height: 128px;
 
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);

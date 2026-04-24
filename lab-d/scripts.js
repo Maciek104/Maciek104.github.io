@@ -18,15 +18,22 @@ searchBtn.addEventListener("click", () => {
 function getCurrentWeather(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=pl`;
 
-  fetch(url)
-    .then(res => {
-      if (!res.ok) throw new Error();
-      return res.json();
-    })
-    .then(data => {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText);
+
+      console.log("Current Weather API response:", data);
+
       displayCurrentWeather(data);
-    })
-    .catch(() => alert("Nie znaleziono miejscowości!"));
+    } else {
+      alert("Nie znaleziono miasta!");
+    }
+  };
+
+  xhr.send();
 }
 
 function displayCurrentWeather(data) {
@@ -67,6 +74,8 @@ function getForecast(city) {
       return res.json();
     })
     .then(data => {
+      console.log("Forecast API response:", data);
+
       displayForecast(data);
     })
     .catch(() => alert("Błąd pobierania prognozy"));
