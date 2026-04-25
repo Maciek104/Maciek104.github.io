@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona główna</title>
+    <title>Podstawy Technologii Webowych</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -17,10 +16,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
-            background-color: lightblue;
-            padding-left: 16%;
-            padding-right: 16%;
+            gap: 12px;
+
+            background-color: whitesmoke;
+            background-image:
+                linear-gradient(to right, lightblue 1px, transparent 1px),
+                linear-gradient(to bottom, lightblue 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+
+        header {
+            font-weight: bold;
+            background-color: darkslategrey;
+            color: white;
+            padding: 12px;
+            border-radius: 32px;
+            width: 72%;
+            text-align: center;
+            margin-top: 12px;
         }
 
         .topic {
@@ -28,22 +41,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 100%;
+            width: 72%;
             background-color: white;
             border-radius: 32px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
-        }
-    
-        .topic-title {
-            font-family: "Segoe UI", "Arial", sans-serif;
-            font-size: 2rem;
-            font-weight: bold;
-            background-color: black;
-            color: white;
-            padding: 1rem;
-            border-radius: 32px 32px 0 0;
-            width: 100%;
-            text-align: center;
+            padding: 12px;
+            gap: 8px;
         }
 
         .site {
@@ -51,32 +53,38 @@
             flex-direction: column;
             align-items: left;
             justify-content: center;
-            margin: 2% 4%;
-            width: 92%;
-            background-color: lightblue;
+            background-color: lightgray;
             color: black;
             padding: 1rem;
-            border-radius: 16px;
+            border-radius: 32px;
             text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .site:hover {
-            transform: scale(105%);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.8);
+            transform: scale(100.3%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            font-family: "Playfair Display", "Arial", sans-serif;
+            font-size: 1.6em;
         }
 
         h3 {
-            font-family: "Segoe UI", "Arial", sans-serif;
-            font-size: 1.5rem;
+            font-family: "Playfair Display", "Arial", sans-serif;
+            font-size: 1.3em;
             font-weight: bold;
-            color: black;
+            color: white;
+            text-align: center;
+            border-bottom: 2px solid white;
+            margin-bottom: 12px;
         }
 
         p {
             font-family: "Arial", sans-serif;
             font-size: 0.92rem;
-            color: black;
+            color: darkslategray;
         }
 
         a {
@@ -84,73 +92,83 @@
             color: inherit;
         }
 
+        footer {
+            padding: 16px;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 600px) {
             body {
-                padding: 2%;
-                gap: 2%;
+                gap: 8px;
+                padding: 8px;
             }
 
-            .site {
-                margin: 2% 2%;
-                width: 96%;
-                border-radius: 8px;
+            header {
+                width: 95%;
+                font-size: 0.9rem;
+                padding: 10px;
             }
 
             .topic {
-                border-radius: 8px;
+                width: 95%;
+                padding: 10px;
+                gap: 6px;
             }
 
-            .topic-title {
-                font-size: 1rem;
-                border-radius: 8px 8px 0 0;
+            .site {
+                padding: 0.8rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.2em;
             }
 
             h3 {
-                font-size: 0.9rem;
+                font-size: 1.1em;
             }
 
             p {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
             }
         }
     </style>
 </head>
 <body>
 <header>
-
+    <h1>PODSTAWY TECHNOLOGII WEBOWYCH</h1>
 </header>
 
 <section class="topic">
-    <div class="topic-title">PODSTAWY TECHNOLOGII WEBOWYCH</div>
     <a href="lab-a/index.html">
         <div class="site">
-            <h3>LAB-A</h3>
+            <h3>~ LAB-A ~</h3>
             <p>LAB‑A to laboratorium poświęcone tworzeniu struktury stron oraz ich stylowaniu z użyciem HTML i CSS. To tutaj powstały pierwsze layouty, typografia i fundamenty wizualne całego projektu.</p>
         </div>
     </a>
     <a href="lab-b/index.html">
         <div class="site">
-            <h3>LAB-B</h3>
+            <h3>~ LAB-B ~</h3>
             <p>LAB‑B prezentuje interaktywną To‑Do Listę z wieloma funkcjonalnościami opartymi na JavaScript. Znajdziesz tu dynamiczne dodawanie, usuwanie, filtrowanie i zarządzanie zadaniami w czasie rzeczywistym.</p>
         </div>
     </a>
     <a href="lab-c/index.html">
         <div class="site">
-            <h3>LAB-C</h3>
+            <h3>~ LAB-C ~</h3>
             <p>LAB‑C pozwala wybrać dowolny fragment mapy Leaflet i przekształcić go w obraz rastrowy za pomocą Canvas. Ten wygenerowany obraz jest następnie cięty na puzzle 4x4, które użytkownik może układać metodą drag & drop.</p>
         </div>
     </a>
     <a href="lab-d/index.html">
         <div class="site">
-            <h3>LAB-D</h3>
+            <h3>~ LAB-D ~</h3>
             <p>LAB-D to aplikacja wykorzystująca REST API do pobierania i wyświetlania aktualnej pogody oraz prognozy 5-dniowej dla wybranej miejscowości z użyciem XMLHttpRequest i Fetch API.</p>
         </div>
     </a>
 </section>
 
 
-<footer>
-
+<footer class="topic">
+    <p><strong>&copy Maciej Stępień</strong></p>
 </footer>
 </body>
 
