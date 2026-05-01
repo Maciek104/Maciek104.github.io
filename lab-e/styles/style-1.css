@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background: blue;
+    color: white;
+    height: 128px;
+}
+
+header img {
+    fill: white;
+    height: 96px;
+}
