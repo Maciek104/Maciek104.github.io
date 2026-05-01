@@ -1,26 +1,74 @@
-function changeStyle(style: string) {
-    const existingLink = document.querySelector('link[data-style]');
-    if (existingLink) {
-        existingLink.remove();
+type StyleMap = {
+    [key: string]: string;
+};
+
+
+const styles: StyleMap = {
+    "1": "styles/style-1.css",
+    "2": "styles/style-2.css",
+    "3": "styles/style-3.css"
+};
+
+
+let currentStyleKey: string = Object.keys(styles)[0];
+let currentLinkElement: HTMLLinkElement | null = null;
+
+
+function applyStyle(stylePath: string) {
+    if (currentLinkElement) {
+        document.head.removeChild(currentLinkElement);
     }
 
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = `/styles/${style}.css`;
-    link.dataset.style = style;
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = stylePath;
+
     document.head.appendChild(link);
+
+    currentLinkElement = link;
 }
 
-const buttons = document.querySelectorAll('footer button');
-buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        const styleName = `style-${index + 1}`;
-        changeStyle(styleName);
+
+function changeStyle(styleKey: string) {
+    currentStyleKey = styleKey;
+    const stylePath = styles[styleKey];
+    applyStyle(stylePath);
+}
+
+
+function createStyleSwitcher() {
+    const container = document.createElement("div");
+    container.id = "style-switcher";
+
+    const title = document.createElement("p");
+    title.textContent = "WYBIERZ STYL";
+    title.id = "style-switcher-title"
+    container.appendChild(title);
+
+    const buttonsRow = document.createElement("div");
+    buttonsRow.id = "buttons-row"
+
+    Object.keys(styles).forEach((styleKey) => {
+        const btn = document.createElement("button");
+        btn.textContent = styleKey;
+        btn.id = "style-switch-button"
+
+        btn.addEventListener("click", () => {
+            changeStyle(styleKey);
+        });
+
+        buttonsRow.appendChild(btn);
     });
-})
 
-function loadDefaultStyle() {
-    changeStyle('style-1');
+    container.appendChild(buttonsRow)
+
+    document.body.appendChild(container);
 }
 
-window.addEventListener('load', loadDefaultStyle);
+
+function init() {
+  createStyleSwitcher();
+  applyStyle(styles[currentStyleKey]);
+}
+
+init();
