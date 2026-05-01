@@ -9,22 +9,31 @@ W repozytorium znajdują się kolejne laboratoria przedstawiające rozwój umiej
 ## 🧪 Zawartość
 
 ### 🔹 LAB-A
-Tworzenie struktury strony internetowej oraz stylowanie z wykorzystaniem HTML i CSS. Podstawy layoutu, typografii oraz organizacji treści.
+
+LAB‑A to laboratorium poświęcone tworzeniu struktury stron oraz ich stylowaniu z użyciem HTML i CSS. To tutaj powstały pierwsze layouty, typografia i fundamenty wizualne całego projektu.
 
 ### 🔹 LAB-B
-Interaktywna aplikacja typu To-Do List z wykorzystaniem JavaScript. Obsługa zdarzeń, dynamiczne modyfikowanie DOM oraz zarządzanie stanem aplikacji.
+
+LAB‑B prezentuje interaktywną To‑Do Listę z wieloma funkcjonalnościami opartymi na JavaScript. Znajdziesz tu dynamiczne dodawanie, usuwanie, filtrowanie i zarządzanie zadaniami w czasie rzeczywistym.
 
 ### 🔹 LAB-C
-Aplikacja wykorzystująca bibliotekę Leaflet oraz Canvas do generowania obrazu mapy i przekształcania go w interaktywne puzzle (drag & drop).
+
+LAB‑C pozwala wybrać dowolny fragment mapy Leaflet i przekształcić go w obraz rastrowy za pomocą Canvas. Ten wygenerowany obraz jest następnie cięty na puzzle 4x4, które użytkownik może układać metodą drag & drop.
 
 ### 🔹 LAB-D
-Aplikacja typu REST API Client pobierająca dane pogodowe z OpenWeather API. Wykorzystuje asynchroniczne zapytania HTTP (XMLHttpRequest oraz Fetch API) oraz dynamiczne renderowanie danych w interfejsie użytkownika.
+
+LAB-D to aplikacja wykorzystująca REST API do pobierania i wyświetlania aktualnej pogody oraz prognozy 5-dniowej dla wybranej miejscowości z użyciem XMLHttpRequest i Fetch API.
+
+### 🔹 LAB-E
+
+LAB-E to aplikacja typu SPA stworzona w TypeScript, w której style CSS są dynamicznie przełączane bez przeładowania strony. Projekt wykorzystuje Vite oraz manipulację DOM do zarządzania stanem aplikacji i podpinania arkuszy stylów w czasie rzeczywistym.
 
 ## 🚀 Technologie
 
 - HTML
 - CSS
 - JavaScript
+- TypeScript
 
 ## 🌐 Demo
 
