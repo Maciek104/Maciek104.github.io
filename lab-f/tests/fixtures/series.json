@@ -1,0 +1,32 @@
+[
+  {
+    "title": "The Last of Us",
+    "platform": "Max",
+    "genre": "Drama",
+    "year": 2025
+  },
+  {
+    "title": "Stranger Things",
+    "platform": "Netflix",
+    "genre": "Sci-Fi",
+    "year": 2025
+  },
+  {
+    "title": "House of the Dragon",
+    "platform": "Max",
+    "genre": "Fantasy",
+    "year": 2026
+  },
+  {
+    "title": "The Boys",
+    "platform": "Prime Video",
+    "genre": "Action",
+    "year": 2026
+  },
+  {
+    "title": "Wednesday",
+    "platform": "Netflix",
+    "genre": "Comedy",
+    "year": 2025
+  }
+]
