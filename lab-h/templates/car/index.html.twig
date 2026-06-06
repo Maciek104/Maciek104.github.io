@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car index{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="mb-0">Car index</h1>
+
+            <a class="btn btn-success" href="{{ path('app_car_new') }}">
+                + Create new
+            </a>
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-striped table-hover table-bordered align-middle">
+
+                <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th style="width: 180px;">Actions</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for car in cars %}
+                    <tr>
+                        <td class="text-nowrap">{{ car.id }}</td>
+                        <td>{{ car.make }}</td>
+                        <td>{{ car.model }}</td>
+                        <td>{{ car.year }}</td>
+                        <td>{{ car.price }}</td>
+
+                        <td class="text-nowrap">
+                            <div class="d-flex gap-1 flex-wrap">
+
+                                <a class="btn btn-sm btn-primary"
+                                   href="{{ path('app_car_show', {'id': car.id}) }}">
+                                    Show
+                                </a>
+
+                                <a class="btn btn-sm btn-warning"
+                                   href="{{ path('app_car_edit', {'id': car.id}) }}">
+                                    Edit
+                                </a>
+                            </div>
+                        </td>
+
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            <span class="text-muted">No records found</span>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
