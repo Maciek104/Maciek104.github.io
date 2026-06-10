@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+import app from "../app.js";   // używamy import zamiast require
+import debugLib from "debug";
+import http from "http";
+
+const debug = debugLib("crud:server");
+const port = process.env.PORT || 57791;
+app.set("port", port);
+
+const server = http.createServer(app);
+
+server.listen(port);
+server.on("error", (error) => {
+  console.error(error);
+});
+
+server.on("listening", () => {
+  const addr = server.address();
+  const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+  debug("Listening on " + bind);
+});
