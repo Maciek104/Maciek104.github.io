@@ -1,13 +1,24 @@
-<h1>Lista samochodów</h1>
-<a href="/cars/create/new">Dodaj nowy samochód</a>
-<ul>
-    <% cars.forEach(car => { %>
-        <li>
-            <a href="/cars/<%= car.id %>"><%= car.producent %> <%= car.model %></a>
-            (<a href="/cars/edit/<%= car.id %>">edytuj</a>)
-            <form action="/cars/delete/<%= car.id %>" method="POST" style="display:inline">
-                <button type="submit">usuń</button>
-            </form>
-        </li>
-    <% }) %>
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista samochodów</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <main>
+      <h1>Lista samochodów</h1>
+      <a href="/cars/create/new">Dodaj nowy samochód</a>
+      <ul>
+          <% cars.forEach(car => { %>
+              <li>
+                  <a href="/cars/<%= car.id %>"><%= car.producent %> <%= car.model %></a>
+                  (<a href="/cars/edit/<%= car.id %>">edytuj</a>)
+                  <form action="/cars/delete/<%= car.id %>" method="POST" style="display:inline">
+                      <button type="submit">usuń</button>
+                  </form>
+              </li>
+          <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>
