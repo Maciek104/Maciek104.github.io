@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="show">
+  <h2>Car details</h2>
+
+  <article>
+	<p><b>Manufacturer:</b> {{ car.manufacturer }}</p>
+	<p><b>Model:</b> {{ car.model }}</p>
+	<p><b>Year:</b> {{ car.year }}</p>
+	<p><b>Price:</b> {{ car.price }}</p>
+  </article>
+
+</div>
+
+{% endblock %}

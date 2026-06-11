@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cars Flask</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="{{ url_for('cars_list') }}">Cars list</a></li>
+        <li><a href="{{ url_for('car_create') }}">Add car</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h1>Cars Flask</h1>
+
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>&copy; Cars Flask</footer>
+
+</body>
+</html>
+

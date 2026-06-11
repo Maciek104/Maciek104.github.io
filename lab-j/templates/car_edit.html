@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="edit">
+  <h2>Edit car</h2>
+
+  <form class="edit-form" method="post">
+
+    <div class="form-group">
+      <label>Manufacturer:
+        <input type="text" name="manufacturer" value="{{ car.manufacturer }}" required>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>Model:
+        <input type="text" name="model" value="{{ car.model }}" required>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>Year:
+        <input type="number" name="year" value="{{ car.year }}" required>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>Price:
+        <input type="number" step="0.01" name="price" value="{{ car.price }}" required>
+      </label>
+    </div>
+
+    <button type="submit">Update</button>
+
+  </form>
+</div>
+
+{% endblock %}

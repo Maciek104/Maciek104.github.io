@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="index">
+  <h2>Cars</h2>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+
+    {% for car in cars %}
+    <tr>
+      <td>{{ car.id }}</td>
+      <td>{{ car.manufacturer }}</td>
+      <td>{{ car.model }}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.price }}</td>
+      <td class="actions">
+        <a href="/cars/{{ car.id }}">Show</a>
+        <a href="/cars/{{ car.id }}/edit">Edit</a>
+        <a href="/cars/{{ car.id }}/delete">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</div>
+
+{% endblock %}

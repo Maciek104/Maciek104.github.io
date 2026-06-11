@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Routing i kontroler listy — kod (zrzut)</title>
+  <style>
+    body{font-family:Consolas, "Liberation Mono", monospace; background:#2b2b2b; color:#f8f8f2; padding:20px}
+    .box{background:#1e1e1e; border-radius:6px; padding:16px; box-shadow:0 4px 12px rgba(0,0,0,.6)}
+    pre{white-space:pre-wrap; word-break:break-word; font-size:13px}
+    h1{font-size:18px; margin-bottom:8px}
+    .path{color:#8be9fd; font-size:12px}
+  </style>
+</head>
+<body>
+  <h1>Routing i kontroler listy (plik: app.py)</h1>
+  <div class="path">Ścieżka: C:\Users\sm57791\Desktop\Maciek104.github.io\lab-j\app.py</div>
+  <div class="box">
+    <pre><code>from flask import Flask, render_template, request, redirect, url_for
+import sqlite3
+
+app = Flask(__name__)
+
+DATABASE = "cars.db"
+
+
+def get_db():
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+@app.route("/")
+def home():
+    return redirect(url_for("cars_list"))
+
+
+# LISTA
+
+@app.route("/cars")
+def cars_list():
+    conn = get_db()
+    cars = conn.execute(
+        "SELECT * FROM cars ORDER BY id"
+    ).fetchall()
+    conn.close()
+
+    return render_template(
+        "cars_list.html",
+        cars=cars
+    )
+
+
+# ... (inne routy: car_show, car_create, car_edit, car_delete są poniżej w pliku) ...
+
+if __name__ == "__main__":
+    app.run(
+        host="0.0.0.0",
+        port=57791,
+        debug=True
+    )
+    </code></pre>
+  </div>
+</body>
+</html>
+
