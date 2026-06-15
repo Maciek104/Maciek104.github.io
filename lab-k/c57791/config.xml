@@ -1,14 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.apache.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Maciej Stępień (57791)</name>
+<widget id="pl.edu.zut.wi.sm57791"
+        version="1.0.0"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <name>Maciej 57791</name>
+
     <description>
         Weather App
     </description>
-    <author email="sm57791@zut.edu.pl" href="https://www.wi.zut.edu.pl">
-        Maciej Stępień (57791)
+
+    <author email="sm57791@zut.edu.pl"
+            href="https://www.wi.zut.edu.pl">
+        Maciej Stępień
     </author>
+
     <content src="weather.html" />
+
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+
+    <platform name="electron">
+        <icon src="res/electron/icon.png" />
+        <preference name="ElectronSettingsFilePath" value="res/electron/settings.json" />
+    </platform>
 </widget>
 
