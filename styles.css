@@ -483,6 +483,75 @@ a:focus-visible {
     font-style: normal;
 }
 
+.projects {
+    padding-bottom: 145px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    border-top: 1px solid var(--line);
+}
+
+.project-card {
+    padding: 27px 0 30px;
+    border-bottom: 1px solid var(--line);
+}
+
+.project-meta,
+.project-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.project-type {
+    color: #78816e;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+}
+
+.project-card h3 {
+    margin: 24px 0 10px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+}
+
+.project-card > p {
+    min-height: 48px;
+    max-width: 470px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.project-card .card-tags {
+    margin-top: 17px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 19px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.project-links {
+    justify-content: flex-start;
+    gap: 24px;
+}
+
+.project-link span {
+    color: #769548;
+    font-size: 14px;
+}
+
 .contact {
     overflow: hidden;
     background: var(--green);
@@ -633,6 +702,10 @@ a:focus-visible {
     .toolkit {
         grid-template-columns: 1fr;
         gap: 24px;
+        padding-bottom: 100px;
+    }
+
+    .projects {
         padding-bottom: 100px;
     }
 
@@ -861,6 +934,22 @@ a:focus-visible {
         gap: 17px;
         padding-top: 55px;
         padding-bottom: 88px;
+    }
+
+    .projects {
+        padding-bottom: 88px;
+    }
+
+    .project-card {
+        padding: 24px 0 26px;
+    }
+
+    .project-card h3 {
+        margin-top: 20px;
+    }
+
+    .project-card > p {
+        min-height: 0;
     }
 
     .toolkit-row {
