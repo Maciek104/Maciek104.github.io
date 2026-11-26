@@ -414,6 +414,7 @@ a:focus-visible {
     color: white;
     padding-right: 24px;
     padding-left: 32px;
+    border-left: 0;
 }
 
 .featured-card + .expertise-card {
