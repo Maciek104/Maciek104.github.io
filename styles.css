@@ -292,8 +292,7 @@ a:focus-visible {
 }
 
 .intro-copy h2,
-.section-heading h2,
-.toolkit-heading h2 {
+.section-heading h2 {
     margin: 0;
     font-size: clamp(31px, 4vw, 51px);
     font-weight: 600;
@@ -302,13 +301,12 @@ a:focus-visible {
 }
 
 .intro-copy h2 span,
-.section-heading h2 span,
-.toolkit-heading h2 span {
+.section-heading h2 span {
     color: #8a9b70;
 }
 
 .intro-copy > p,
-.toolkit-heading > p {
+.toolkit-caption {
     max-width: 590px;
     margin: 25px 0 25px;
     color: var(--muted);
@@ -436,24 +434,20 @@ a:focus-visible {
 }
 
 .toolkit {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 12%;
     padding-top: 70px;
     padding-bottom: 145px;
 }
 
-.toolkit-heading h2 {
-    margin-top: 34px;
+.toolkit-section-heading {
+    margin-bottom: 20px;
 }
 
-.toolkit-heading > p {
-    max-width: 330px;
-    margin-top: 19px;
+.toolkit-caption {
+    margin: 0 0 34px 218px;
 }
 
 .toolkit-list {
-    padding-top: 2px;
+    border-top: 1px solid var(--line);
 }
 
 .toolkit-row {
@@ -700,8 +694,6 @@ a:focus-visible {
     }
 
     .toolkit {
-        grid-template-columns: 1fr;
-        gap: 24px;
         padding-bottom: 100px;
     }
 
@@ -709,8 +701,8 @@ a:focus-visible {
         padding-bottom: 100px;
     }
 
-    .toolkit-heading h2 {
-        margin-top: 25px;
+    .toolkit-caption {
+        margin-left: 0;
     }
 
     .contact-orbit {
@@ -860,8 +852,7 @@ a:focus-visible {
     }
 
     .intro-copy h2,
-    .section-heading h2,
-    .toolkit-heading h2 {
+    .section-heading h2 {
         font-size: clamp(32px, 8vw, 43px);
     }
 
@@ -931,7 +922,6 @@ a:focus-visible {
     }
 
     .toolkit {
-        gap: 17px;
         padding-top: 55px;
         padding-bottom: 88px;
     }
